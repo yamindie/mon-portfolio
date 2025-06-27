@@ -1,42 +1,56 @@
-
-document.querySelectorAll('#navMenu a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-c
-    document.getElementById('navMenu').classList.remove('open');
-    const id = link.getAttribute('href');
-    const target = document.querySelector(id);
-    target?.scrollIntoView({behavior: 'smooth'});
-  });
-});
-
-
+// === Menu Mobile ===
 const burger = document.getElementById('burger');
 const navMenu = document.getElementById('navMenu');
+
 burger.addEventListener('click', () => {
   navMenu.classList.toggle('open');
 });
 
-
-const sections = document.querySelectorAll('section[id]');
-const options = { rootMargin: '-50% 0px -45% 0px' };
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const link = document.querySelector(`#navMenu a[href="#${entry.target.id}"]`);
-    if (link) {
-      if (entry.isIntersecting) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    }
-  });
-}, options);
-sections.forEach(sec => observer.observe(sec));
-
-
-const navbar = document.querySelector('.navbar');
+// === Ombre sur la navbar au scroll ===
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 10);
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 10) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
 });
 
+// === Bouton Retour en haut ===
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    scrollTopBtn.style.display = 'block';
+  } else {
+    scrollTopBtn.style.display = 'none';
+  }
+});
+
+scrollTopBtn?.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// === Scroll fluide vers les ancres ===
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// === Message de confirmation du formulaire ===
+const form = document.querySelector('form');
+form?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert("Merci ! Votre demande a été envoyée avec succès. Je vous contacterai sous 24h.");
+  form.reset();
+});
