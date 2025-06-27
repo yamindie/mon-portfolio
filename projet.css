@@ -1,88 +1,20 @@
-
+ /* === CSS Responsive pour Portfolio de OUALI Yamindié === */
 
 body {
   font-family: 'Times New Roman', Times, serif;
-  margin: 10px;
+  margin: 0;
   padding: 10px;
   background-color: rgba(231, 238, 240, 0.865);
-  color: var(--text-color);
+  color: #000;
   line-height: 1.6;
 }
-menu {
-    
-    display: flex;
-    font-weight: 600;
-    justify-content: right;
-    background: rgb(0, 221, 255);
-    padding: 4px 0;
-    cursor: pointer;
 
-}
-.navbar{
-    background-color: none;
-    overflow: hidden;
-
-
-}
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+h2 {
+  padding: 10px;
+  background-color: rgba(180, 216, 235, 0.432);
 }
 
-.navbar li {
-    float: left;
-}
-
-.navbar a {
-    display: block;
-    color:blue;
-    text-align: center;
-    padding: 5px 10px;
-    text-decoration: none;
-}
-
-.navbar a:hover {
-    background-color: #aed8db;
-    color: black;
-}
-.portfolio{
-    background-color: rgb(179, 214, 153);
-    text-align: center;
-    color: blue;
- 
-}
- h2 {
-    padding: 10px;
-    background-color:rgba(180, 216, 235, 0.432);
- }
- .parent{
-    display: flex;
- }
- .enfant{
-    margin-left: auto;
- }
- .premier{
-    display: flex;
- }
- .accueil{
-flex: 1;
-    
- }
-details{
-    background-color: white;
-}
-
-.photo{
-    margin-left: auto;
-}
-.photocnfa{
-    margin: auto;
-}
-#section4{
-    flex: 1;
-}
-
+/* ===== NAVIGATION ===== */
 .navbar {
   position: sticky;
   top: 0;
@@ -91,218 +23,200 @@ details{
   box-shadow: 0 0 0 transparent;
   transition: box-shadow 0.3s ease;
 }
+
 .navbar.scrolled {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-#navMenu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .8rem;
-  margin-left: auto;    
-}
-#navMenu a {
-  text-decoration: none;
-  padding: .4rem .6rem;
-  color: #004d9b;
-  border-radius: 4px;
-  transition: background .3s;
-}
-#navMenu a:hover,
-#navMenu a.active {                /* highlight du lien actif */
-  background: #aed8db;
-  color: #111;
-}
-
-/* ----- HAMBURGER (mobile) ----- */
 #burger {
-  display: none;                  /* caché sur large écran */
+  display: none;
   font-size: 1.8rem;
   background: none;
   border: none;
   cursor: pointer;
   margin-left: auto;
 }
-@media (max-width: 768px) {
-  #burger { display: block; }
 
-  #navMenu {
-    flex-direction: column;
-    position: absolute;
-    top: 100%;               
-    right: 0;
-    background: white;
-    width: 220px;
-    max-height: 0;    
-    overflow: hidden;
-    transition: max-height .4s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
-  #navMenu.open {
-    max-height: 500px;           
-  }
+menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  background: rgb(0, 221, 255);
+  padding: 4px 0;
+  gap: .5rem;
 }
-.cnfa{
+
+menu a {
+  color: #004d9b;
+  text-decoration: none;
+  padding: .4rem .6rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+menu a:hover,
+menu a.active {
+  background: #aed8db;
+  color: #111;
+}
+
+.portfolio {
+  background-color: rgb(179, 214, 153);
+  text-align: center;
+  color: blue;
+  padding: 0.5rem;
+}
+
+/* ===== STRUCTURE ===== */
+.premier,
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.accueil,
+.enfant,
+#section4 {
+  flex: 1;
+}
+
+.photo img,
+.photocnfa img,
+.enfant img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+/* ===== BOUTONS DÉTAILLÉS ===== */
+.cnfa,
+.irc,
+.ada,
+.chemonics1,
+.chemonics2,
+.enko,
+.iyafp,
+.peace {
   display: inline-block;
   border: 2px solid blue;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-}
-.cnfa button{
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-  cursor:pointer
-}
-.cnfa:hover{
-background-attachment: lightgray;
-}
-.irc{
-  display: inline-block;
-  border: 2px solid blue;
-  border-radius: 5px;
-  padding: 10px 20 px;
-  cursor: pointer;
-}
-.irc button{
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-  cursor:pointer
-}
-.irc:hover{
-background-attachment: lightgray;
-}
-.ada{
-  display: inline-block;
-  border: 2px solid blue;
-  border-radius: 5px;
-  padding: 10px 20 px;
-  cursor: pointer;
-}
-.ada button{
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-  cursor:pointer
-}
-.ada:hover{
-background-attachment: lightgray;
-}
-.chemonics1{
-  display: inline-block;
-  border: 2px solid blue;
-  border-radius: 5px;
-  padding: 10px 20 px;
-  cursor: pointer;
-}
-.chemonics1 button{
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-  cursor:pointer
-}
-.chemonics1:hover{
-background-attachment: lightgray;
-}
-.chemonics2{
-  display: inline-block;
-  border: 2px solid blue;
-  border-radius: 5px;
-  padding: 10px 20 px;
-  cursor: pointer;
-}
-.chemonics2 button{
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-  cursor:pointer
-}
-.chemonics2:hover{
-background-attachment: lightgray;
+  margin-bottom: 10px;
 }
 
-.enko{
-  display: inline-block;
-  border: 2px solid blue;
-  border-radius: 5px;
-  padding: 10px 20 px;
-  cursor: pointer;
-}
-.enko button{
+.cnfa button,
+.irc button,
+.ada button,
+.chemonics1 button,
+.chemonics2 button,
+.enko button,
+.iyafp button,
+.peace button {
   background-color: transparent;
   border: none;
   font-size: 16px;
-  cursor:pointer
-}
-.enko :hover{
-background-attachment: lightgray;
+  cursor: pointer;
 }
 
-.iyafp{
-  display: inline-block;
-  border: 2px solid blue;
-  border-radius: 5px;
-  padding: 10px 20 px;
-  cursor: pointer;
-}
-.iyafp button{
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-  cursor:pointer
-}
-.iyafp:hover{
-background-attachment: lightgray;
+.cnfa:hover,
+.irc:hover,
+.ada:hover,
+.chemonics1:hover,
+.chemonics2:hover,
+.enko:hover,
+.iyafp:hover,
+.peace:hover {
+  background-color: lightgray;
 }
 
-.peace{
-  display: inline-block;
-  border: 2px solid blue;
-  border-radius: 5px;
-  padding: 10px 20 px;
-  cursor: pointer;
+/* ===== ARTICLES ===== */
+.articles-list {
+  list-style-type: none;
+  padding: 0;
 }
-.peace button{
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-  cursor:pointer
+
+.articles-list li {
+  margin-bottom: 0.5rem;
 }
-.peace:hover{
-background-attachment: lightgray;
-}
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 16px;
-    padding: 5px;
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #burger {
+    display: block;
   }
 
-  .parent, .premier {
+  menu {
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    width: 220px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  menu.open {
+    max-height: 500px;
+  }
+
+  .premier,
+  .parent {
     flex-direction: column;
   }
 
-  .navbar li {
-    float: none;
-  }
-
-  .navbar a {
-    padding: 10px;
-    text-align: left;
-  }
-
-  .photo, .photocnfa {
-    margin: auto;
-    display: block;
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .cnfa, .irc, .ada, .chemonics1, .chemonics2, .enko, .iyafp, .peace {
+  .cnfa,
+  .irc,
+  .ada,
+  .chemonics1,
+  .chemonics2,
+  .enko,
+  .iyafp,
+  .peace {
     width: 100%;
     text-align: center;
-    margin-bottom: 10px;
+  }
+
+  body {
+    padding: 5px;
   }
 }
 
+/* ===== FORMULAIRE ===== */
+form {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+form input,
+form textarea,
+form select,
+form button {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
