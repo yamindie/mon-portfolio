@@ -146,7 +146,7 @@ details{
   display: inline-block;
   border: 2px solid blue;
   border-radius: 5px;
-  padding: 10px 20 px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 .cnfa button{
@@ -272,5 +272,37 @@ background-attachment: lightgray;
 }
 .peace:hover{
 background-attachment: lightgray;
+}
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  .parent, .premier {
+    flex-direction: column;
+  }
+
+  .navbar li {
+    float: none;
+  }
+
+  .navbar a {
+    padding: 10px;
+    text-align: left;
+  }
+
+  .photo, .photocnfa {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .cnfa, .irc, .ada, .chemonics1, .chemonics2, .enko, .iyafp, .peace {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 }
 
